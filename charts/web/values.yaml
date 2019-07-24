@@ -5,17 +5,25 @@
 replicaCount: 1
 
 image:
-  repository: nginx
-  tag: stable
+  registry: docker.io
+  repository: brendenvogt/reactreduxdotnetcore
+  tag: 0.5
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+# -- orig
+# service:
+#   type: ClusterIP
+#   port: 80
+# -- updated
 service:
-  type: ClusterIP
+  type: LoadBalancer
   port: 80
+  httpsPort: 443
+  metricsPort: 9117
 
 ingress:
   enabled: false
