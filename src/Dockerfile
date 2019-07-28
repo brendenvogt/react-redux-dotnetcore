@@ -15,4 +15,5 @@ WORKDIR /app
 COPY --from=build-env /source/dist .
 
 EXPOSE 80
+EXPOSE 3000
 ENTRYPOINT ["dotnet", "src.dll"]
