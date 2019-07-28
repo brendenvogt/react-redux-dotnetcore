@@ -1,0 +1,1 @@
+docker run --name web -d -p 3000:3000 brendenvogt/reactreduxdotnetcore:$1
